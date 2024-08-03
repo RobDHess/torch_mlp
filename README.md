@@ -3,7 +3,7 @@
 # Torch-MLP
 *A library that should have been created ages ago*
 
-If you are like me, you have created many MLPs (or FFNs) in the past few years. Perhaps you did something like this:
+If you are like me, you have created many MLPs (or FFNs) in PyTorch in the past few years. Perhaps you did something like this:
 
 ```python
 layers = []
