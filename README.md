@@ -1,4 +1,4 @@
-* Hi there! If you found this already, know that this is still a work in progress. I'll have this done by next week *
+*Hi there! If you found this already, know that this is still a work in progress. I'll have this done by next week*
 
 # Torch-MLP
 *A library that should have been created ages ago*
