@@ -56,7 +56,7 @@ mlp = MLP(
     act_params={"inplace": True},
     weight_init_params={"mode": "fan_in", "nonlinearity": "relu"},
     norm_params={
-        "momentum": 0.42,
+        "momentum": 0.5,
         "affine": False,
     },
 )
