@@ -21,31 +21,26 @@ mlp = nn.Sequential(*layers)
 I have written this code in various forms so many times. Something as simple as this should not be repeated over and over again by programmers all over the world. **Just try and search for `.append(nn.Linear(` on GitHub and you'll get nearly 30K matches!** That's insane! This package is meant to replace all of that by making MLPs easily configurable. It has a flexible interface so you can build MLPs in the minimum amount of necessary lines. This reduces clutter, reduces errors and will make your life better. 
 
 ## How it works
-Let's say you want a simple rectangular MLP of depth 3 with batch normalisation and dropout. You can use:
+First, import the package like so:
 ```python
 from torch_mlp import MLP
+```
 
-mlp = MLP(
-    d_in=784,
-    d_hidden=128,
-    d_out=10,
-    depth=3,
-    act=nn.ReLU,
-    norm=nn.BatchNorm1d,
-    dropout=0.2,
-)
+Let's say you want a simple rectangular MLP of depth 3. You can use:
+```python
+mlp = MLP(d_in=784, d_hidden=128, d_out=10, depth=3)
 ```
 That's nice! But what if you want to have more fine-grained control over the hidden dimensionality? No problem:
 
 ```python
-mlp = MLP(
-    dims=[784, 128, 64, 32, 16, 10]
-    act=nn.ReLU,
-    norm=nn.BatchNorm1d,
-    dropout=0.2,
-)
+mlp = MLP(dims=[784, 12, 11, 10])
 ```
-You are free to use any of these options to set the dimensionality of your activations. 
+What if you want more fine-grained control, like setting the normalisation, the activation and dropout? Simple:
+
+```python
+mlp = MLP(dims=[784, 100, 10], act=nn.ReLU, norm=nn.BatchNorm1d, dropout=0.5)
+```
+
 
 How about more interesting configurations? For every input argument, you can supply an additional argument with the `_params` suffix to supply extra arguments to the MLP creation module. For example, we could create an MLP with Kaiming normal initialisation and initialise all biases to zero. 
 ```python
