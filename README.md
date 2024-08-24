@@ -1,25 +1,6 @@
-# torch-mlp
+# <img src="torch_mlp.png" alt="Logo" width="150" align="left"/> Torch MLP 
 
 `torch-mlp` is a Python package built on PyTorch for creating flexible and customizable multi-layer perceptrons (MLPs). This package provides an easy way to construct MLPs with various configurations, including custom activation functions, normalization layers, and dropout.
-
-The hope is that we can all stop repeating this:
-
-
-```python
-layers = []
-layers.append(nn.Linear(in_dim, hidden_dim))
-for i in range(n_layers - 1):
-    layers.append(nn.Linear(hidden_dim, hidden_dim))
-    if use_bn:
-        layers.append(nn.Batchnorm1d(hidden_dim))
-    layers.append(nn.ReLU())
-layers.append(nn.Linear(hidden_dim, out_dim))
-mlp = nn.Sequential(*layers)
-```
-
-Searching for `.append(nn.Linear(` on GitHub yields nearly 30K matches Instead of writing the same boilerplate code over and over again, you can use `torch-mlp` to quickly build MLPs.
-
-
 
 ## Features
 
@@ -191,10 +172,6 @@ MLP(
          weight_kwargs={"mode": "fan_in", "nonlinearity": "relu"},
     )
     ```
-
-## License
-
-This project is licensed under the MIT License.
 
 ## Contributing
 
