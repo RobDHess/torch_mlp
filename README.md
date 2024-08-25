@@ -112,12 +112,12 @@ MLP(
 ##### Layer parameters
 - **`bias`**: Whether to include bias in the linear layers. Defaults to `True`.
 - **`p`**: Dropout probability. Only used if `dropout` is specified.
-- **`embed`**: If `True`, the first layer will be an embedding layer. `d_in` is used as `num_embeddings`.
 ##### Special structure parameters
+- **`embed`**: If `True`, the first layer will be an embedding layer. `d_in` is used as `num_embeddings`.
 - **`end_linear`**: Whether to use a linear only for the final layer. Defaults to `True`.
 - **`end_act`**: Optional activation function for the output layer.
-- **`linear_kwargs`**: Additional keyword arguments for the linear layers.
 ##### Layer kwargs
+- **`linear_kwargs`**: Additional keyword arguments for the linear layers.
 - **`norm_kwargs`**: Additional keyword arguments for the normalization layers.
 - **`act_kwargs`**: Additional keyword arguments for the activation functions.
 - **`dropout_kwargs`**: Additional keyword arguments for the dropout layers.
