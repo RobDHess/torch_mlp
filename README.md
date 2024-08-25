@@ -98,24 +98,30 @@ MLP(
 
 ### Parameters
 
+##### Shape
 - **`d_in`**: The dimension of the input layer.
 - **`d_hidden`**: The dimension of each hidden layer.
 - **`d_out`**: The dimension of the output layer.
 - **`depth`**: The number of layers.
 - **`dims`**: Alternatively, you can specify a list of dimensions for each layer.
+##### Layer types
 - **`linear`**: The linear layer module to use. Defaults to `nn.Linear`.
 - **`norm`**: Optional normalization layer module (e.g., `nn.BatchNorm1d`).
 - **`act`**: Activation function module. Defaults to `nn.ReLU`.
 - **`dropout`**: Optional dropout module. Defaults to `nn.Dropout`.
+##### Layer parameters
 - **`bias`**: Whether to include bias in the linear layers. Defaults to `True`.
 - **`p`**: Dropout probability. Only used if `dropout` is specified.
 - **`embed`**: If `True`, the first layer will be an embedding layer. `d_in` is used as `num_embeddings`.
+##### Special structure parameters
 - **`end_linear`**: Whether to use a linear only for the final layer. Defaults to `True`.
 - **`end_act`**: Optional activation function for the output layer.
 - **`linear_kwargs`**: Additional keyword arguments for the linear layers.
+##### Layer kwargs
 - **`norm_kwargs`**: Additional keyword arguments for the normalization layers.
 - **`act_kwargs`**: Additional keyword arguments for the activation functions.
 - **`dropout_kwargs`**: Additional keyword arguments for the dropout layers.
+##### Initialisation
 - **`weight_init`**: Custom weight initialization function.
 - **`bias_init`**: Custom bias initialization function.
 - **`weight_kwargs`**: Additional keyword arguments for weight initialization.
